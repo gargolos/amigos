@@ -8,8 +8,20 @@ function agregarAmigo(){
     } else {
         amigos.push(nombreDeAmigo);
         document.getElementById('amigo').value = "";
+        
+        let lista = document.getElementById('listaAmigos');
+        lista.innerHTML = "";
+        let res = "";
+        for(let n =0; n <=amigos.length-1;n++ ) {
+            res = res + "<li>" + amigos[n] + "</li>";   
+        }
+        lista.innerHTML  = res;
     }
     return;
+}
 
+function sortearAmigo(){
+
+    return;
 }
 
