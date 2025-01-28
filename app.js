@@ -11,6 +11,8 @@ function agregarAmigo(){
         
         let lista = document.getElementById('listaAmigos');
         lista.innerHTML = "";
+        document.getElementById('resultado').innerHTML = "";
+
         let res = "";
         for(let n =0; n <=amigos.length-1;n++ ) {
             res = res + "<li>" + amigos[n] + "</li>";   
@@ -21,7 +23,17 @@ function agregarAmigo(){
 }
 
 function sortearAmigo(){
-
+   
+    if (amigos.length != 0){
+        let num = generarNumeroAleatorio();
+        document.getElementById('listaAmigos').innerHTML = "";
+        document.getElementById('resultado').innerHTML = "<li> El amigo secreto sorteado es: " + amigos[num] + "</li>"; ;
+        console.log(amigos[num]);
+    }
     return;
 }
 
+function generarNumeroAleatorio() {
+    return Math.floor(Math.random()*amigos.length);
+
+}
